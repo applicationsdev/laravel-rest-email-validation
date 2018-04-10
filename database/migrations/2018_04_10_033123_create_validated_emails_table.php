@@ -18,7 +18,7 @@ class CreateValidatedEmailsTable extends Migration
             // By IETF, the max allowed limit of email length is {64}@{255}
             // but a custom-defined limit can increase our app's security & performance
             $table->string('email', 100)->unique();
-            $table->timestampTz('validated_timestamp')->nullable();
+            $table->timestamp('validated_timestamp')->nullable();
         });
     }
 
