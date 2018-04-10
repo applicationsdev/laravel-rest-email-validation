@@ -74,6 +74,27 @@ class ValidatedEmailController extends Controller
                     $validatedEmail->save();
                     
                     $this->setValidationStateTrue();
+                    
+                    /**
+                     * Distributed data - replication feature
+                     * 
+                     * Example: replicate/distribute validated "clean" data
+                     * (assuming that destination DB & tabe exists)
+                     * 
+                     * use Illuminate\Support\Facades\DB;
+                     * 
+                     * // Check if data is already replicated
+                     * if (!$record = DB::table('dbname.replicated_clean_data')
+                     * ->where('email', '=', $validatedEmail->email)->first()) {
+                     * 
+                     *   // Store new clean data
+                     *   DB::table('dbname.replicated_clean_data')->insert([
+                     *     'email' => $validatedEmail->email,
+                     *     'validated_at' => $validatedEmail->validated_timestamp,
+                     *   ]);
+                     * }
+                     * 
+                     */
             
                     return response()->json([
                         'email' => $validatedEmail->email,
