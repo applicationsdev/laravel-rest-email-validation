@@ -8,7 +8,5 @@ class ValidatedEmail extends Model
 {
     public $timestamps = false;
     
-    protected $fillable = [
-        'email', 'validated_timestamp',
-    ];
+    protected $fillable = ['email'];
 }
