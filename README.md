@@ -50,8 +50,9 @@ vendor/bin/phpunit
 
 # To test the Email Validation API using cURL run the command
 # Example:
-curl -X GET -H "Accept:application/json" -i -s https://laravel-mysql-sec-rest-api-ecom-applicationsdeveloper.c9users.io/api/validate/email/EMAIL_ACCOUNT
-# (as EMAIL_ACCOUNT, use any email stored in the database table: validated_emails)
+curl -X GET -H "Accept:application/json" -i -s http//LOCALHOST/api/validate/email/EMAIL_ACCOUNT
+# as LOCALHOST use your localhost -> example: 127.0.0.1
+# as EMAIL_ACCOUNT, use any email stored in the database table: validated_emails
 
 # To test the Email Validation API using visual tools, check these
 # https://www.getpostman.com/
